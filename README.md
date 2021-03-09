@@ -18,6 +18,11 @@ def build_model():
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 
+### Train 2
+#### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+```
+outputs = EfficientNetB0(weights='imagenet', classes=NUM_CLASSES)(inputs)
+```
 
 #### Links
 https://sci-hub.se/10.1007/s13748-019-00203-0
