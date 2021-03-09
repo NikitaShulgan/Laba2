@@ -13,6 +13,7 @@ import tensorflow as tf
 import time
 from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
+from tensorflow.python.util.tf_export import keras_export
 
 # Avoid greedy memory allocation to allow shared GPU usage
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -56,13 +57,38 @@ def create_dataset(filenames, batch_size):
     .prefetch(tf.data.AUTOTUNE)
 
 
-def build_model():
-  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(inputs)
-  x = tf.keras.layers.MaxPool2D()(x)
-  x = tf.keras.layers.Flatten()(x)
-  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
-  return tf.keras.Model(inputs=inputs, outputs=outputs)
+#def build_model():
+ # inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+ # x = tf.keras.layers.Conv2D(filters=8, kernel_size=3)(inputs)
+ # x = tf.keras.layers.MaxPool2D()(x)
+ #x = tf.keras.layers.Flatten()(x)
+ #outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
+ #return tf.keras.Model(inputs=inputs, outputs=outputs)
+
+@keras_export('keras.applications.efficientnet.EfficientNetB0',
+              'keras.applications.EfficientNetB0')
+def EfficientNetB0(include_top=True,
+                   weights='None',
+                   input_tensor=None,
+                   input_shape=None,
+                   pooling=None,
+                   classes=20,
+                   classifier_activation='softmax',
+                   **kwargs):
+  return EfficientNet(
+      1.0,
+      1.0,
+      224,
+      0.2,
+      model_name='efficientnetb0',
+      include_top=include_top,
+      weights=weights,
+      input_tensor=input_tensor,
+      input_shape=input_shape,
+      pooling=pooling,
+      classes=classes,
+      classifier_activation=classifier_activation,
+      **kwargs)
 
 
 def main():
