@@ -4,6 +4,9 @@
 #### EfficientNet-B0 architecture
 https://www.researchgate.net/publication/339462624/figure/fig1/AS:862263699316737@1582591094412/The-architecture-of-EfficientNet-b0.ppm
 
+![image](https://user-images.githubusercontent.com/80168174/110480321-6aae0900-80f7-11eb-82e6-f389f93c3966.png)
+
+
 ### Train 1
 #### Нейронная сеть EfficientNet-B0 (случайное начальное приближение), датасет Oregon WildLife.
 ```
@@ -18,3 +21,4 @@ def build_model():
 
 
 #### Links
+https://sci-hub.se/10.1007/s13748-019-00203-0
