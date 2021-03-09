@@ -2,8 +2,6 @@
 ## Решение задачи классификации изображений из набора данных Oregon Wildlife с использованием нейронных сетей глубокого обучения и техники обучения Transfer Learning
 
 #### EfficientNet-B0 architecture
-https://www.researchgate.net/publication/339462624/figure/fig1/AS:862263699316737@1582591094412/The-architecture-of-EfficientNet-b0.ppm
-
 ![image](https://user-images.githubusercontent.com/80168174/110480321-6aae0900-80f7-11eb-82e6-f389f93c3966.png)
 
 
