@@ -37,6 +37,7 @@ img_augmentation = Sequential(
         preprocessing.RandomContrast(factor=0.1),
     ],
     name="img_augmentation",
+)
   
 def parse_proto_example(proto):
   keys_to_features = {
