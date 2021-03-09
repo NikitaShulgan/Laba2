@@ -29,7 +29,15 @@ NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
 
-
+img_augmentation = Sequential(
+    [
+        preprocessing.RandomRotation(factor=0.15),
+        preprocessing.RandomTranslation(height_factor=0.1, width_factor=0.1),
+        preprocessing.RandomFlip(),
+        preprocessing.RandomContrast(factor=0.1),
+    ],
+    name="img_augmentation",
+  
 def parse_proto_example(proto):
   keys_to_features = {
     'image/encoded': tf.io.FixedLenFeature((), tf.string, default_value=''),
@@ -61,7 +69,8 @@ def create_dataset(filenames, batch_size):
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  outputs = EfficientNetB0(include_top=False, input_tensor=inputs, weights='imagenet', classes=NUM_CLASSES)
+  x = img_augmentation(inputs)
+  outputs = EfficientNetB0(include_top=False, input_tensor=x, weights='imagenet', classes=NUM_CLASSES)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
