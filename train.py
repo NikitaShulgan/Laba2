@@ -15,6 +15,7 @@ from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
 from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.layers.experimental import preprocessing
+from tensorflow.keras.models import Sequential
 
 
 # Avoid greedy memory allocation to allow shared GPU usage
