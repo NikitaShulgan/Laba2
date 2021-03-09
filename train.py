@@ -13,7 +13,8 @@ import tensorflow as tf
 import time
 from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
-from tensorflow.python.util.tf_export import keras_export
+from tensorflow.keras.applications import EfficientNetB0
+
 
 # Avoid greedy memory allocation to allow shared GPU usage
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -65,30 +66,32 @@ def create_dataset(filenames, batch_size):
  #outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
  #return tf.keras.Model(inputs=inputs, outputs=outputs)
 
-@keras_export('keras.applications.efficientnet.EfficientNetB0',
-              'keras.applications.EfficientNetB0')
-def EfficientNetB0(include_top=True,
-                   weights='None',
-                   input_tensor=None,
-                   input_shape=None,
-                   pooling=None,
-                   classes=20,
-                   classifier_activation='softmax',
-                   **kwargs):
-  return EfficientNet(
-      1.0,
-      1.0,
-      224,
-      0.2,
-      model_name='efficientnetb0',
-      include_top=include_top,
-      weights=weights,
-      input_tensor=input_tensor,
-      input_shape=input_shape,
-      pooling=pooling,
-      classes=classes,
-      classifier_activation=classifier_activation,
-      **kwargs)
+#@keras_export('keras.applications.efficientnet.EfficientNetB0',
+#              'keras.applications.EfficientNetB0')
+#def EfficientNetB0(include_top=True,
+#                   weights='None',
+#                   input_tensor=None,
+#                   input_shape=None,
+#                   pooling=None,
+#                    classes=20,
+#                   classifier_activation='softmax',
+#                   **kwargs):
+#  return EfficientNet(
+#      1.0,
+#      1.0,
+#      224,
+#      0.2,
+#      model_name='efficientnetb0',
+#      include_top=include_top,
+#      weights=weights,
+#      input_tensor=input_tensor,
+#      input_shape=input_shape,
+#      pooling=pooling,
+#      classes=classes,
+#      classifier_activation=classifier_activation,
+#      **kwargs)
+
+model = EfficientNetB0(weights='None', classes=20)
 
 
 def main():
@@ -101,7 +104,7 @@ def main():
   train_dataset = dataset.take(train_size)
   validation_dataset = dataset.skip(train_size)
 
-  model = build_model()
+ # model = build_model()
 
   model.compile(
     optimizer=tf.optimizers.Adam(lr=0.001),
