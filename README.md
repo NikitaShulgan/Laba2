@@ -7,6 +7,7 @@
 
 ### Train 1
 #### Нейронная сеть EfficientNet-B0 (случайное начальное приближение), датасет Oregon WildLife.
+##### https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars
 ```
 BATCH_SIZE = 16
 
