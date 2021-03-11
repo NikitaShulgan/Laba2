@@ -16,7 +16,7 @@ def build_model():
   outputs = EfficientNetB0(weights=None, classes=NUM_CLASSES)(inputs)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-
+Оранживая - обучающая выборка, Синия - валидационная выборка (на всех графиках в данном отчете)
 ##### https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_categorical_accuracy_EfficientNet-B0_weights_None.svg">
