@@ -1,12 +1,12 @@
 # Лабораторная работа #2
 ## Решение задачи классификации изображений из набора данных Oregon Wildlife с использованием нейронных сетей глубокого обучения и техники обучения Transfer Learning
 
-#### EfficientNet-B0 architecture
+## EfficientNet-B0 architecture
 ![image](https://user-images.githubusercontent.com/80168174/110480321-6aae0900-80f7-11eb-82e6-f389f93c3966.png)
 
 
-### Train 1
-#### Нейронная сеть EfficientNet-B0 (случайное начальное приближение), датасет Oregon WildLife.
+## Train 1
+### Нейронная сеть EfficientNet-B0 (случайное начальное приближение), датасет Oregon WildLife.
 
 ```
 BATCH_SIZE = 16
@@ -16,8 +16,8 @@ def build_model():
   outputs = EfficientNetB0(weights=None, classes=NUM_CLASSES)(inputs)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-Оранживая - обучающая выборка, Синия - валидационная выборка (на всех графиках в данном отчете)
-##### https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars
+#### Оранживая - обучающая выборка, Синия - валидационная выборка (на всех графиках в данном отчете)
+#### https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_categorical_accuracy_EfficientNet-B0_weights_None.svg">
 
@@ -25,8 +25,8 @@ def build_model():
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_None.svg">
 
 
-### Train 2
-#### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+## Train 2
+### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
 
 ```
 BATCH_SIZE = 16
@@ -39,15 +39,15 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, input_shape=(7, 7), activation = tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-##### https://tensorboard.dev/experiment/jbmjL062Ra6PiakXOYlaKA/#scalars
+#### https://tensorboard.dev/experiment/jbmjL062Ra6PiakXOYlaKA/#scalars
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_categorical_accuracy_EfficientNet-B0_weights_ImageNet.svg">
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
-### Train 3 owl-1615469804.7533162
-#### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+## Train 3 owl-1615469804.7533162
+### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
 ```
 BATCH_SIZE = 16
 
@@ -58,7 +58,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-##### Модель нейронной сети Train 3
+### Модель нейронной сети Train 3
 ```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
@@ -75,15 +75,15 @@ Total params: 5,303,991
 Trainable params: 5,261,968
 Non-trainable params: 42,023
 ```
-##### https://tensorboard.dev/experiment/V0weQQ7rRPiqQmT9t6gBJA/#scalars
+#### https://tensorboard.dev/experiment/V0weQQ7rRPiqQmT9t6gBJA/#scalars
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_loss.svg">
 
-### Train 4 owl-1615473209.896111
-#### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+## Train 4 owl-1615473209.896111
+### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
 ```
 BATCH_SIZE = 64
 
@@ -94,7 +94,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-##### Модель нейронной сети Train 4 
+#### Модель нейронной сети Train 4 
 ```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
@@ -112,15 +112,15 @@ Trainable params: 5,261,968
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-##### https://tensorboard.dev/experiment/kBQ9MhjJRuewgV982QFekA/#scalars
+#### https://tensorboard.dev/experiment/kBQ9MhjJRuewgV982QFekA/#scalars
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_loss.svg">
 
-### Train 5
-#### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+## Train 5
+### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
 ```
 BATCH_SIZE = 64
 
@@ -131,7 +131,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-##### Модель нейронной сети Train 5 owl-1615475964.8956075
+#### Модель нейронной сети Train 5 owl-1615475964.8956075
 ```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
@@ -149,7 +149,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-##### 
+#### 
 #### epoch_categorical_accuracy
 <img src="">
 
