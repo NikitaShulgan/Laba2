@@ -17,7 +17,7 @@ def build_model():
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 #### Оранживая - обучающая выборка, Синия - валидационная выборка (на всех графиках в данном отчете)
-#### https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_categorical_accuracy_EfficientNet-B0_weights_None.svg">
 
@@ -39,7 +39,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, input_shape=(7, 7), activation = tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-#### https://tensorboard.dev/experiment/jbmjL062Ra6PiakXOYlaKA/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/jbmjL062Ra6PiakXOYlaKA/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_categorical_accuracy_EfficientNet-B0_weights_ImageNet.svg">
 
@@ -83,7 +83,7 @@ Total params: 5,303,991
 Trainable params: 5,261,968
 Non-trainable params: 42,023
 ```
-#### https://tensorboard.dev/experiment/V0weQQ7rRPiqQmT9t6gBJA/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/V0weQQ7rRPiqQmT9t6gBJA/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_categorical_accuracy.svg">
 
@@ -125,7 +125,7 @@ Trainable params: 5,261,968
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### https://tensorboard.dev/experiment/kBQ9MhjJRuewgV982QFekA/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/kBQ9MhjJRuewgV982QFekA/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_categorical_accuracy.svg">
 
@@ -163,7 +163,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### https://tensorboard.dev/experiment/6gGBdAtZSp6Ovqd2XCDq9g/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/6gGBdAtZSp6Ovqd2XCDq9g/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_5_epoch_categorical_accuracy.svg">
 
@@ -201,7 +201,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### https://tensorboard.dev/experiment/zbYSmjCpRounPWXTmOGeww/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/zbYSmjCpRounPWXTmOGeww/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_6_epoch_categorical_accuracy.svg">
 
@@ -248,7 +248,7 @@ Trainable params: 6,480,308
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### https://tensorboard.dev/experiment/6j0NyyEiQYGoqBgDyIaR8Q/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/6j0NyyEiQYGoqBgDyIaR8Q/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_7_epoch_categorical_accuracy.svg">
 
@@ -307,7 +307,7 @@ Trainable params: 6,740,908
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### https://tensorboard.dev/experiment/qLNm24DGR4ubd7B3KP2FEA/#scalars
+#### [TensorBoard](https://tensorboard.dev/experiment/qLNm24DGR4ubd7B3KP2FEA/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_8_epoch_categorical_accuracy.svg">
 
@@ -342,7 +342,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-####
+#### [TensorBoard]( ) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_9_epoch_categorical_accuracy.svg">
 
