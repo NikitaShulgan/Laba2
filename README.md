@@ -77,10 +77,10 @@ Non-trainable params: 42,023
 ```
 ##### https://tensorboard.dev/experiment/V0weQQ7rRPiqQmT9t6gBJA/#scalars
 #### epoch_categorical_accuracy
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_loss.svg">
 
 ### Train 4 owl-1615473209.896111
 #### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
