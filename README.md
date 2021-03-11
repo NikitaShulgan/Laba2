@@ -315,7 +315,7 @@ _________________________________________________________________
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_8_epoch_loss.svg">
 
 ## Train 9
-##### log file 
+##### log file owl-1615498611.943456
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
@@ -342,7 +342,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### [TensorBoard]( ) 
+#### [TensorBoard](https://tensorboard.dev/experiment/0rGz8j9ER228nywO4ZcBIQ/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_9_epoch_categorical_accuracy.svg">
 
