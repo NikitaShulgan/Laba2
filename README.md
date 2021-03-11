@@ -250,6 +250,64 @@ _________________________________________________________________
 #### epoch_loss
 <img src="">
 
+## Train 8
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+```
+BATCH_SIZE = 64
+
+def build_model():
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = EfficientNetB0(include_top=False, weights='imagenet', classes=NUM_CLASSES)(inputs)
+  x = tf.keras.layers.GlobalMaxPool2D()(x)
+  x = tf.keras.layers.Dense(1280)(x)
+  x = tf.keras.layers.Dense(640)(x)
+  x = tf.keras.layers.Dense(320)(x)
+  x = tf.keras.layers.Dense(160)(x)
+  x = tf.keras.layers.Dense(80)(x)
+  x = tf.keras.layers.Dense(40)(x)
+  x = tf.keras.layers.Dense(20)(x)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+```
+#### Модель нейронной сети Train 8
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0
+_________________________________________________________________
+efficientnetb0 (Functional)  (None, None, None, 1280)  4049571
+_________________________________________________________________
+global_max_pooling2d (Global (None, 1280)              0
+_________________________________________________________________
+dense (Dense)                (None, 1280)              1639680
+_________________________________________________________________
+dense_1 (Dense)              (None, 640)               819840
+_________________________________________________________________
+dense_2 (Dense)              (None, 320)               205120
+_________________________________________________________________
+dense_3 (Dense)              (None, 160)               51360
+_________________________________________________________________
+dense_4 (Dense)              (None, 80)                12880
+_________________________________________________________________
+dense_5 (Dense)              (None, 40)                3240
+_________________________________________________________________
+dense_6 (Dense)              (None, 20)                820
+_________________________________________________________________
+dense_7 (Dense)              (None, 20)                420
+=================================================================
+Total params: 6,782,931
+Trainable params: 6,740,908
+Non-trainable params: 42,023
+_________________________________________________________________
+```
+#### 
+#### epoch_categorical_accuracy
+<img src="">
+
+#### epoch_loss
+<img src="">
+
 ## Анализ полученных результатов
 [Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
 #### Links
