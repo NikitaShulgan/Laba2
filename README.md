@@ -349,6 +349,41 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_9_epoch_loss.svg">
 
+## Train 10
+##### log file 
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+```
+BATCH_SIZE = 64
+
+def build_model():
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = EfficientNetB0(include_top=False, weights="imagenet", pooling='max', classes=NUM_CLASSES, classifier_activation="relu")(inputs)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+```
+#### Модель нейронной сети Train 10
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0
+_________________________________________________________________
+efficientnetb0 (Functional)  (None, 1280)              4049571
+_________________________________________________________________
+dense (Dense)                (None, 20)                25620
+=================================================================
+Total params: 4,075,191
+Trainable params: 4,033,168
+Non-trainable params: 42,023
+_________________________________________________________________
+```
+#### [TensorBoard]() 
+#### epoch_categorical_accuracy
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_10_epoch_categorical_accuracy.svg">
+
+#### epoch_loss
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_10_epoch_loss.svg">
+
 ## Анализ полученных результатов
 [Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
 #### Links
