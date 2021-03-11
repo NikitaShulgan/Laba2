@@ -204,6 +204,34 @@ _________________________________________________________________
 #### epoch_loss
 <img src="">
 
+## Train 7
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+```
+BATCH_SIZE = 64
+
+def build_model():
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = EfficientNetB0(include_top=False, weights='imagenet', classes=NUM_CLASSES)(inputs)
+  x = tf.keras.layers.GlobalMaxPool2D()(x)
+  x = tf.keras.layers.Dense(1280)(x)
+  x = tf.keras.layers.Dense(640)(x)
+  x = tf.keras.layers.Dense(20)(x)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+```
+#### Модель нейронной сети Train 7
+```
+_________________________________________________________________
+
+_________________________________________________________________
+```
+#### 
+#### epoch_categorical_accuracy
+<img src="">
+
+#### epoch_loss
+<img src="">
+
 ## Анализ полученных результатов
 [Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
 #### Links
