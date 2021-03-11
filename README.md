@@ -204,7 +204,7 @@ _________________________________________________________________
 #### epoch_loss
 <img src="">
 
-## Train 7
+## Train 7 owl-1615484396.3451083
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
