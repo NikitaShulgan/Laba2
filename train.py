@@ -65,15 +65,8 @@ def create_dataset(filenames, batch_size):
 def build_model():
   
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = EfficientNetB0(include_top=False, weights="imagenet", pooling=avg, classes=NUM_CLASSES, classifier_activation="relu")(inputs)
+  x = EfficientNetB0(include_top=False, weights="imagenet", pooling='avg', classes=NUM_CLASSES, classifier_activation="relu")(inputs)
   x = tf.keras.layers.GlobalMaxPool2D()(x)
-  x = tf.keras.layers.Dense(1280)(x)
-  x = tf.keras.layers.Dense(640)(x)
-  x = tf.keras.layers.Dense(320)(x)
-  x = tf.keras.layers.Dense(160)(x)
-  x = tf.keras.layers.Dense(80)(x)
-  x = tf.keras.layers.Dense(40)(x)
-  x = tf.keras.layers.Dense(20)(x)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
