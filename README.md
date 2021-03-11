@@ -58,6 +58,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
+##### Модель нейронной сети Train 3
 ```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
