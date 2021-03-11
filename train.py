@@ -72,12 +72,43 @@ def create_dataset(filenames, batch_size):
 
 
 def build_model():
-  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = img_augmentation(inputs)
-  outputs = EfficientNetB0(include_top=False, input_tensor=x, weights='imagenet', classes=NUM_CLASSES)
-  return tf.keras.Model(inputs=inputs, outputs=outputs)
+ # inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+ # x = img_augmentation(inputs)
+ # outputs = EfficientNetB0(include_top=False, input_tensor=x, weights='imagenet', classes=NUM_CLASSES)
+ # return tf.keras.Model(inputs=inputs, outputs=outputs)
+   inputs = layers.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+   x = img_augmentation(inputs)
+   model = EfficientNetB0(include_top=False, input_tensor=x, weights="imagenet", classes=NUM_CLASSES)
+    
+   model.trainable = False
+   
+  
+###
+def build_model(num_classes):
+    inputs = layers.Input(shape=(IMG_SIZE, IMG_SIZE, 3))
+    x = img_augmentation(inputs)
+    model = EfficientNetB0(include_top=False, input_tensor=x, weights="imagenet")
 
+    # Freeze the pretrained weights
+    model.trainable = False
 
+    # Rebuild top
+    x = layers.GlobalAveragePooling2D(name="avg_pool")(model.output)
+    x = layers.BatchNormalization()(x)
+
+    top_dropout_rate = 0.2
+    x = layers.Dropout(top_dropout_rate, name="top_dropout")(x)
+    outputs = layers.Dense(NUM_CLASSES, activation="softmax", name="pred")(x)
+
+    # Compile
+    model = tf.keras.Model(inputs, outputs, name="EfficientNet")
+    optimizer = tf.keras.optimizers.Adam(learning_rate=1e-2)
+    model.compile(
+        optimizer=optimizer, loss="categorical_crossentropy", metrics=["accuracy"]
+    )
+    return model
+  
+###
 def main():
   args = argparse.ArgumentParser()
   args.add_argument('--train', type=str, help='Glob pattern to collect train tfrecord files, use single quote to escape *')
