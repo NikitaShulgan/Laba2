@@ -350,7 +350,7 @@ _________________________________________________________________
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_9_epoch_loss.svg">
 
 ## Train 10
-##### log file 
+##### log file owl-1615501328.662753
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
