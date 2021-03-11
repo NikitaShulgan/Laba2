@@ -26,7 +26,7 @@ def build_model():
 
 
 ## Train 2
-### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 
 ```
 BATCH_SIZE = 16
@@ -47,7 +47,7 @@ def build_model():
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
 ## Train 3 owl-1615469804.7533162
-### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 #### В сравнении с [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) были удалены:
 #### 1. Cлой 
 ```
@@ -90,7 +90,7 @@ Non-trainable params: 42,023
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_loss.svg">
 
 ## Train 4 owl-1615473209.896111
-### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 #### В сравнении с [Train 3](https://github.com/NikitaShulgan/Laba2#train-3) были изменены:
 #### 1. BATCH_SIZE. Он увеличился с 16 до 64.
 #### 2. Изменена функция активации в ```tf.keras.layers.Dense```. Была ```Softmax```, стала ```ReLU```.
@@ -131,7 +131,7 @@ _________________________________________________________________
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_loss.svg">
 
 ## Train 5 owl-1615475964.8956075
-### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
 
@@ -162,13 +162,13 @@ _________________________________________________________________
 ```
 #### https://tensorboard.dev/experiment/6gGBdAtZSp6Ovqd2XCDq9g/#scalars
 #### epoch_categorical_accuracy
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_5_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_5_epoch_loss.svg">
 
 ## Train 6 owl-1615481288.6346006
-### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
 
@@ -199,13 +199,13 @@ _________________________________________________________________
 ```
 #### https://tensorboard.dev/experiment/zbYSmjCpRounPWXTmOGeww/#scalars
 #### epoch_categorical_accuracy
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_6_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_6_epoch_loss.svg">
 
 ## Train 7 owl-1615484396.3451083
-### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
 
@@ -245,10 +245,10 @@ _________________________________________________________________
 ```
 #### https://tensorboard.dev/experiment/6j0NyyEiQYGoqBgDyIaR8Q/#scalars
 #### epoch_categorical_accuracy
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_7_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_7_epoch_loss.svg">
 
 ## Train 8 owl-1615492561.5753999
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
@@ -303,10 +303,10 @@ _________________________________________________________________
 ```
 #### https://tensorboard.dev/experiment/qLNm24DGR4ubd7B3KP2FEA/#scalars
 #### epoch_categorical_accuracy
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_8_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_8_epoch_loss.svg">
 
 ## Анализ полученных результатов
 [Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
