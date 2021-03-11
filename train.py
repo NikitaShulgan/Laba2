@@ -32,15 +32,15 @@ NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
 
-img_augmentation = Sequential(
-    [
-        preprocessing.RandomRotation(factor=0.15),
-        preprocessing.RandomTranslation(height_factor=0.1, width_factor=0.1),
-        preprocessing.RandomFlip(),
-        preprocessing.RandomContrast(factor=0.1),
-    ],
-    name="img_augmentation",
-)
+# img_augmentation = Sequential(
+#     [
+#         preprocessing.RandomRotation(factor=0.15),
+#         preprocessing.RandomTranslation(height_factor=0.1, width_factor=0.1),
+#         preprocessing.RandomFlip(),
+#         preprocessing.RandomContrast(factor=0.1),
+#     ],
+#     name="img_augmentation",
+# )
   
 def parse_proto_example(proto):
   keys_to_features = {
@@ -72,43 +72,44 @@ def create_dataset(filenames, batch_size):
 
 
 def build_model():
- # inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
- # x = img_augmentation(inputs)
- # outputs = EfficientNetB0(include_top=False, input_tensor=x, weights='imagenet', classes=NUM_CLASSES)
- # return tf.keras.Model(inputs=inputs, outputs=outputs)
-   inputs = layers.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-   x = img_augmentation(inputs)
-   model = EfficientNetB0(include_top=False, input_tensor=x, weights="imagenet", classes=NUM_CLASSES)
+  
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = EfficientNetB0(include_top=False, weights='imagenet', classes=NUM_CLASSES)(inputs)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.softmax)(x)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+#    inputs = layers.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+#    x = img_augmentation(inputs)
+#    model = EfficientNetB0(include_top=False, input_tensor=x, weights="imagenet", classes=NUM_CLASSES)
     
-   model.trainable = False
+#    model.trainable = False
    
   
-###
-def build_model(num_classes):
-    inputs = layers.Input(shape=(IMG_SIZE, IMG_SIZE, 3))
-    x = img_augmentation(inputs)
-    model = EfficientNetB0(include_top=False, input_tensor=x, weights="imagenet")
+# ###
+# def build_model(num_classes):
+#     inputs = layers.Input(shape=(IMG_SIZE, IMG_SIZE, 3))
+#     x = img_augmentation(inputs)
+#     model = EfficientNetB0(include_top=False, input_tensor=x, weights="imagenet")
 
-    # Freeze the pretrained weights
-    model.trainable = False
+#     # Freeze the pretrained weights
+#     model.trainable = False
 
-    # Rebuild top
-    x = layers.GlobalAveragePooling2D(name="avg_pool")(model.output)
-    x = layers.BatchNormalization()(x)
+#     # Rebuild top
+#     x = layers.GlobalAveragePooling2D(name="avg_pool")(model.output)
+#     x = layers.BatchNormalization()(x)
 
-    top_dropout_rate = 0.2
-    x = layers.Dropout(top_dropout_rate, name="top_dropout")(x)
-    outputs = layers.Dense(NUM_CLASSES, activation="softmax", name="pred")(x)
+#     top_dropout_rate = 0.2
+#     x = layers.Dropout(top_dropout_rate, name="top_dropout")(x)
+#     outputs = layers.Dense(NUM_CLASSES, activation="softmax", name="pred")(x)
 
-    # Compile
-    model = tf.keras.Model(inputs, outputs, name="EfficientNet")
-    optimizer = tf.keras.optimizers.Adam(learning_rate=1e-2)
-    model.compile(
-        optimizer=optimizer, loss="categorical_crossentropy", metrics=["accuracy"]
-    )
-    return model
+#     # Compile
+#     model = tf.keras.Model(inputs, outputs, name="EfficientNet")
+#     optimizer = tf.keras.optimizers.Adam(learning_rate=1e-2)
+#     model.compile(
+#         optimizer=optimizer, loss="categorical_crossentropy", metrics=["accuracy"]
+#     )
+#     return model
   
-###
+# ###
 def main():
   args = argparse.ArgumentParser()
   args.add_argument('--train', type=str, help='Glob pattern to collect train tfrecord files, use single quote to escape *')
@@ -120,6 +121,7 @@ def main():
   validation_dataset = dataset.skip(train_size)
 
   model = build_model()
+  print(model.summary())
 
   model.compile(
     optimizer=tf.optimizers.Adam(lr=0.001),
