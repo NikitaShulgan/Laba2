@@ -91,6 +91,10 @@ Non-trainable params: 42,023
 
 ## Train 4 owl-1615473209.896111
 ### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+#### В сравнении с [Train 3](https://github.com/NikitaShulgan/Laba2#train-3) были изменены:
+#### 1. BATCH_SIZE. Он увеличился с 16 до 64.
+#### 2. Изменена функция активации в ```tf.keras.layers.Dense```. Была ```Softmax```, стала ```ReLU```.
+#### В итоге получилось:
 ```
 BATCH_SIZE = 64
 
