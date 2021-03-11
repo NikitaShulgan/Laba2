@@ -48,6 +48,16 @@ def build_model():
 
 ## Train 3 owl-1615469804.7533162
 ### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+#### В сравнении с [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) были удалены:
+#### 1. Cлой 
+```
+x = tf.keras.layers.Dense(1280)(x) 
+```
+#### 2. Аргумент 
+```
+outputs = tf.keras.layers.Dense(NUM_CLASSES, ~~input_shape=(7, 7),~~ activation = tf.keras.activations.softmax)(x)
+```
+
 ```
 BATCH_SIZE = 16
 
