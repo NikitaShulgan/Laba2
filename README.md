@@ -114,10 +114,10 @@ _________________________________________________________________
 ```
 ##### https://tensorboard.dev/experiment/kBQ9MhjJRuewgV982QFekA/#scalars
 #### epoch_categorical_accuracy
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_categorical_accuracy.svg">
 
 #### epoch_loss
-<img src="">
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_loss.svg">
 
 ### Train 5
 #### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
