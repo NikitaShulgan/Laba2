@@ -301,7 +301,7 @@ Trainable params: 6,740,908
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### 
+#### https://tensorboard.dev/experiment/qLNm24DGR4ubd7B3KP2FEA/#scalars
 #### epoch_categorical_accuracy
 <img src="">
 
