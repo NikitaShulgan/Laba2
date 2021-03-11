@@ -130,7 +130,7 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_loss.svg">
 
-## Train 5
+## Train 5 owl-1615475964.8956075
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
@@ -160,7 +160,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### 
+#### https://tensorboard.dev/experiment/6gGBdAtZSp6Ovqd2XCDq9g/#scalars
 #### epoch_categorical_accuracy
 <img src="">
 
