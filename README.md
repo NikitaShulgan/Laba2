@@ -46,7 +46,7 @@ def build_model():
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
-### Train 3
+### Train 3 owl-1615469804.7533162
 #### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
 ```
 BATCH_SIZE = 16
