@@ -1,12 +1,12 @@
 # Лабораторная работа #2
 ## Решение задачи классификации изображений из набора данных [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife)  с использованием нейронных сетей глубокого обучения и техники обучения Transfer Learning
 
-## EfficientNet-B0 architecture
+## [EfficientNet-B0]https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0) architecture
 ![image](https://user-images.githubusercontent.com/80168174/110480321-6aae0900-80f7-11eb-82e6-f389f93c3966.png)
 
 
 ## Train 1
-### Нейронная сеть EfficientNet-B0 (случайное начальное приближение), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0]https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (случайное начальное приближение), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 
 ```
 BATCH_SIZE = 16
@@ -26,7 +26,7 @@ def build_model():
 
 
 ## Train 2
-### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0]https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 
 ```
 BATCH_SIZE = 16
@@ -47,7 +47,7 @@ def build_model():
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
 ## Train 3 owl-1615469804.7533162
-### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0]https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 #### В сравнении с [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) были удалены:
 #### 1. Cлой 
 ```
@@ -90,7 +90,7 @@ Non-trainable params: 42,023
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_loss.svg">
 
 ## Train 4 owl-1615473209.896111
-### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0]https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 #### В сравнении с [Train 3](https://github.com/NikitaShulgan/Laba2#train-3) были изменены:
 #### 1. BATCH_SIZE. Он увеличился с 16 до 64.
 #### 2. Изменена функция активации в ```tf.keras.layers.Dense```. Была ```Softmax```, стала ```ReLU```.
@@ -131,7 +131,7 @@ _________________________________________________________________
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_loss.svg">
 
 ## Train 5
-### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+### Нейронная сеть [EfficientNet-B0]https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (продобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
 
