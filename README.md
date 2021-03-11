@@ -46,5 +46,7 @@ def build_model():
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
+## Анализ полученных результатов
+
 #### Links
 https://sci-hub.se/10.1007/s13748-019-00203-0
