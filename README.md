@@ -82,6 +82,43 @@ Non-trainable params: 42,023
 #### epoch_loss
 <img src="">
 
+### Train 4 owl-1615473209.896111
+#### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+```
+BATCH_SIZE = 64
+
+def build_model():
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = EfficientNetB0(include_top=False, weights='imagenet', classes=NUM_CLASSES)(inputs)
+  x = tf.keras.layers.Flatten()(x)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+```
+##### Модель нейронной сети Train 4 
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0
+_________________________________________________________________
+efficientnetb0 (Functional)  (None, None, None, 1280)  4049571
+_________________________________________________________________
+flatten (Flatten)            (None, 62720)             0
+_________________________________________________________________
+dense (Dense)                (None, 20)                1254420
+=================================================================
+Total params: 5,303,991
+Trainable params: 5,261,968
+Non-trainable params: 42,023
+_________________________________________________________________
+```
+##### 
+#### epoch_categorical_accuracy
+<img src="">
+
+#### epoch_loss
+<img src="">
+
 ## Анализ полученных результатов
 [Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
 #### Links
