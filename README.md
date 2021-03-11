@@ -131,9 +131,23 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-##### Модель нейронной сети Train 5 
+##### Модель нейронной сети Train 5 owl-1615475964.8956075
 ```
-
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0
+_________________________________________________________________
+efficientnetb0 (Functional)  (None, None, None, 1280)  4049571
+_________________________________________________________________
+global_average_pooling2d (Gl (None, 1280)              0
+_________________________________________________________________
+dense (Dense)                (None, 20)                25620
+=================================================================
+Total params: 4,075,191
+Trainable params: 4,033,168
+Non-trainable params: 42,023
+_________________________________________________________________
 ```
 ##### 
 #### epoch_categorical_accuracy
