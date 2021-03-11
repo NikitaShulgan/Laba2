@@ -58,6 +58,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
+```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
 =================================================================
@@ -72,7 +73,7 @@ dense (Dense)                (None, 20)                1254420
 Total params: 5,303,991
 Trainable params: 5,261,968
 Non-trainable params: 42,023
-
+```
 #####
 #### epoch_categorical_accuracy
 <img src="">
