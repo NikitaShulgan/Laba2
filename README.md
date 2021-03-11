@@ -75,7 +75,7 @@ Total params: 5,303,991
 Trainable params: 5,261,968
 Non-trainable params: 42,023
 ```
-#####
+##### https://tensorboard.dev/experiment/V0weQQ7rRPiqQmT9t6gBJA/#scalars
 #### epoch_categorical_accuracy
 <img src="">
 
