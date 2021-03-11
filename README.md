@@ -20,6 +20,7 @@ def build_model():
 
 ### Train 2
 #### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
+##### https://tensorboard.dev/experiment/jbmjL062Ra6PiakXOYlaKA/#scalars
 ```
 BATCH_SIZE = 16
 
