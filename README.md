@@ -53,11 +53,8 @@ def build_model():
 ```
 x = tf.keras.layers.Dense(1280)(x) 
 ```
-#### 2. Аргумент 
-```
-outputs = tf.keras.layers.Dense(NUM_CLASSES, ~~input_shape=(7, 7),~~ activation = tf.keras.activations.softmax)(x)
-```
-
+#### 2. Аргумент ```input_shape=(7, 7)``` из ```tf.keras.layers.Dense```
+#### В итоге получилось:
 ```
 BATCH_SIZE = 16
 
