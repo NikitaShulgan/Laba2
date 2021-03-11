@@ -7,10 +7,9 @@
 
 ### Train 1
 #### Нейронная сеть EfficientNet-B0 (случайное начальное приближение), датасет Oregon WildLife.
-##### https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars
+
 ```
 BATCH_SIZE = 16
-
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
@@ -18,9 +17,17 @@ def build_model():
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 
+##### https://tensorboard.dev/experiment/4EoeVqP1TLq6X8EG6GhRgw/#scalars
+#### epoch_categorical_accuracy
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_categorical_accuracy_EfficientNet-B0_weights_None.svg">
+
+#### epoch_loss
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_None.svg">
+
+
 ### Train 2
 #### Нейронная сеть EfficientNet-B0 (продобученная на ImageNet), датасет Oregon WildLife.
-##### https://tensorboard.dev/experiment/jbmjL062Ra6PiakXOYlaKA/#scalars
+
 ```
 BATCH_SIZE = 16
 
@@ -32,6 +39,12 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, input_shape=(7, 7), activation = tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
+##### https://tensorboard.dev/experiment/jbmjL062Ra6PiakXOYlaKA/#scalars
+#### epoch_categorical_accuracy
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_categorical_accuracy_EfficientNet-B0_weights_ImageNet.svg">
+
+#### epoch_loss
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
 #### Links
 https://sci-hub.se/10.1007/s13748-019-00203-0
