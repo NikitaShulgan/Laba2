@@ -46,7 +46,8 @@ def build_model():
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
-## Train 3 owl-1615469804.7533162
+## Train 3
+##### log file owl-1615469804.7533162
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 #### В сравнении с [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) были удалены:
 #### 1. Cлой 
@@ -89,7 +90,8 @@ Non-trainable params: 42,023
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_3_epoch_loss.svg">
 
-## Train 4 owl-1615473209.896111
+## Train 4 
+##### log file owl-1615473209.896111
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 #### В сравнении с [Train 3](https://github.com/NikitaShulgan/Laba2#train-3) были изменены:
 #### 1. BATCH_SIZE. Он увеличился с 16 до 64.
@@ -130,7 +132,8 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_4_epoch_loss.svg">
 
-## Train 5 owl-1615475964.8956075
+## Train 5 
+##### log file owl-1615475964.8956075
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
@@ -167,7 +170,8 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_5_epoch_loss.svg">
 
-## Train 6 owl-1615481288.6346006
+## Train 6 
+##### log file owl-1615481288.6346006
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
@@ -204,7 +208,8 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_6_epoch_loss.svg">
 
-## Train 7 owl-1615484396.3451083
+## Train 7 
+##### log file owl-1615484396.3451083
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
@@ -250,7 +255,8 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_7_epoch_loss.svg">
 
-## Train 8 owl-1615492561.5753999
+## Train 8 
+##### log file owl-1615492561.5753999
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
@@ -309,6 +315,7 @@ _________________________________________________________________
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_8_epoch_loss.svg">
 
 ## Train 9
+##### log file 
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 64
