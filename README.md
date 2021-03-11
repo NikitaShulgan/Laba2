@@ -47,6 +47,6 @@ def build_model():
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/epoch_loss_EfficientNet-B0_weights_ImageNet.svg">
 
 ## Анализ полученных результатов
-
+[Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (т.к. у 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
 #### Links
 https://sci-hub.se/10.1007/s13748-019-00203-0
