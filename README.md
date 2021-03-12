@@ -396,7 +396,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-#### Модель нейронной сети Train 10
+#### Модель нейронной сети Train 11
 ```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
