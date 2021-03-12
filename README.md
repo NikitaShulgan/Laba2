@@ -453,7 +453,7 @@ Trainable params: 5,250,448
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### [TensorBoard]() 
+#### [TensorBoard](https://tensorboard.dev/experiment/LefdC788QnCbNT7PXGp1fg/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_12_epoch_categorical_accuracy.svg">
 
