@@ -501,6 +501,17 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_13_epoch_loss.svg">
 
+```
+BATCH_SIZE = 16
+
+def build_model():
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  model = EfficientNetB0(include_top=False, weights="imagenet", pooling='max', classes=NUM_CLASSES)(inputs)
+  model.trainsble = False
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+```
+
 ## Анализ полученных результатов
 [Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
 #### Links
