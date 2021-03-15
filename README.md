@@ -615,6 +615,40 @@ _________________________________________________________________
 #### epoch_loss
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_16_epoch_loss.svg">
 
+## Train 17
+##### log file owl-1615846371.8349254
+### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
+```
+BATCH_SIZE = 8
+
+def build_model():
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  outputs = EfficientNetB0(weights=None, classes=NUM_CLASSES)(inputs)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+  
+  optimizer=tf.optimizers.Adam(lr=0.0001),
+```
+#### Модель нейронной сети Train 17
+```
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+input_1 (InputLayer)         [(None, 224, 224, 3)]     0
+_________________________________________________________________
+efficientnetb0 (Functional)  (None, 20)                4075191
+=================================================================
+Total params: 4,075,191
+Trainable params: 4,033,168
+Non-trainable params: 42,023
+_________________________________________________________________
+```
+#### [TensorBoard](https://tensorboard.dev/experiment/ioKg3gTRS5KwU8Gj3SJKgg/#scalars) 
+#### epoch_categorical_accuracy
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_17_epoch_categorical_accuracy.svg">
+
+#### epoch_loss
+<img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_17_epoch_loss.svg">
+
 
 ## Анализ полученных результатов
 [Train 1](https://github.com/NikitaShulgan/Laba2#train-1), [Train 2](https://github.com/NikitaShulgan/Laba2#train-2), [Train 3](https://github.com/NikitaShulgan/Laba2#train-3), [Train 12](https://github.com/NikitaShulgan/Laba2#train-12), [Train 13](https://github.com/NikitaShulgan/Laba2#train-13) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках. Убрав слой ``` Dense``` в [Train 3](https://github.com/NikitaShulgan/Laba2#train-3) я смог уменьшить epoch_loss в 1000000 раз. Эксперименты со слоями показали эффективность ```GlobalAveragePooling2D``` ([Train 5](https://github.com/NikitaShulgan/Laba2#train-5)) и ```GlobalMaxPool2D``` ([Train 6](https://github.com/NikitaShulgan/Laba2#train-6)). Точность около 15%. 
