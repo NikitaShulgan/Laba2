@@ -538,7 +538,7 @@ _________________________________________________________________
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_14_epoch_loss.svg">
 
 ## Train 15
-##### log file 
+##### log file owl-1615798466.590331
 ### Нейронная сеть [EfficientNet-B0](https://www.tensorflow.org/api_docs/python/tf/keras/applications/EfficientNetB0)  (предобученная на ImageNet), датасет [Oregon Wildlife](https://www.kaggle.com/virtualdvid/oregon-wildlife).
 ```
 BATCH_SIZE = 32
@@ -550,7 +550,7 @@ def build_model():
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
-#### Модель нейронной сети Train 14
+#### Модель нейронной сети Train 15
 ```
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #
