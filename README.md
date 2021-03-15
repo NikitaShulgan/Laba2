@@ -547,7 +547,7 @@ def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   x = EfficientNetB0(include_top=False, weights="imagenet", pooling='avg', classes=NUM_CLASSES)(inputs)
   x.trainsble = False
-  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.relu)(x)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation = tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 #### Модель нейронной сети Train 15
@@ -566,7 +566,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### [TensorBoard]() 
+#### [TensorBoard](https://tensorboard.dev/experiment/z71n8271R6qYtw6W4bd6EA/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_15_epoch_categorical_accuracy.svg">
 
