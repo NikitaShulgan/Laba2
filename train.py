@@ -27,7 +27,7 @@ for gpu in gpus:
 
 
 LOG_DIR = 'logs'
-BATCH_SIZE = 16
+BATCH_SIZE = 8
 NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
