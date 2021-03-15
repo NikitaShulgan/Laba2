@@ -71,13 +71,28 @@ def create_dataset(filenames, batch_size):
     .prefetch(tf.data.AUTOTUNE)
 
 
-def build_model():
-  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = EfficientNetB0(include_top=False, weights="imagenet", pooling='avg', classes=NUM_CLASSES)(inputs)
-  x.trainable = False
-  #x = layers.GlobalAveragePooling2D(name="avg_pool")(model)
-  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation="softmax")(x)
-  return tf.keras.Model(inputs=inputs, outputs=outputs)
+# def build_model():
+   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+   EN0 = EfficientNetB0(include_top=False, weights="imagenet", pooling='avg', classes=NUM_CLASSES)(inputs)
+   #x.trainable = False
+   model = Sequential()
+   model.add(EN0)
+   model.trainable = False
+   #x = layers.GlobalAveragePooling2D(name="avg_pool")(model)
+   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation="softmax")(x)
+   return tf.keras.Model(inputs=inputs, outputs=outputs)
+# class MyModel(tf.keras.Model):
+
+#   def __init__(self):
+#     super(MyModel, self).__init__()
+#     self.sequ = tf.keras.Sequential()
+#     self.EN0 = EfficientNetB0(include_top=False, weights="imagenet", pooling='avg', classes=NUM_CLASSES)
+
+#   def call(self, inputs):
+#     x = self.sequ(inputs)
+#     return self.dense2(x)
+
+# model = MyModel()
 
 
 def main():
