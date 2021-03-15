@@ -77,7 +77,7 @@ def build_model():
   x = EfficientNetB0(include_top=False, weights="imagenet")(inputs)
   x.trainable = False
   #model.trainable = False
-  x = layers.GlobalAveragePooling2D()(model)
+  x = layers.GlobalAveragePooling2D()(x)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation="softmax")(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 # class MyModel(tf.keras.Model):
