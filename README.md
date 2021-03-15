@@ -587,6 +587,8 @@ def build_model():
   x = layers.GlobalAveragePooling2D()(x)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
+  
+  optimizer=tf.optimizers.Adam(lr=0.0001),
 ```
 #### Модель нейронной сети Train 16
 ```
@@ -606,7 +608,7 @@ Trainable params: 4,033,168
 Non-trainable params: 42,023
 _________________________________________________________________
 ```
-#### [TensorBoard]() 
+#### [TensorBoard](https://tensorboard.dev/experiment/Lc31h3UrTbWTGfaqqrypAQ/#scalars) 
 #### epoch_categorical_accuracy
 <img src="https://raw.githubusercontent.com/NikitaShulgan/Laba2/main/for_Readme/Train_16_epoch_categorical_accuracy.svg">
 
