@@ -617,6 +617,10 @@ _________________________________________________________________
 
 
 ## Анализ полученных результатов
-[Train 1](https://github.com/NikitaShulgan/Laba2#train-1) и [Train 2](https://github.com/NikitaShulgan/Laba2#train-2) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках.
+[Train 1](https://github.com/NikitaShulgan/Laba2#train-1), [Train 2](https://github.com/NikitaShulgan/Laba2#train-2), [Train 3](https://github.com/NikitaShulgan/Laba2#train-3), [Train 12](https://github.com/NikitaShulgan/Laba2#train-12), [Train 13](https://github.com/NikitaShulgan/Laba2#train-13) ничем не лучше метода "Пальцем в небо" (у нас 20 видов картинок, т.е. вероятность угадать 5%), что мы можем видеть на графиках. Убрав слой ``` Dense``` в [Train 3](https://github.com/NikitaShulgan/Laba2#train-3) я смог уменьшить epoch_loss в 1000000 раз. Эксперименты со слоями показали эффективность ```GlobalAveragePooling2D``` ([Train 5](https://github.com/NikitaShulgan/Laba2#train-5)) и ```GlobalMaxPool2D``` ([Train 6](https://github.com/NikitaShulgan/Laba2#train-6)). Точность около 15%. 
+Добавление слоев ``` Dense``` ( [Train 7](https://github.com/NikitaShulgan/Laba2#train-7), [Train 8](https://github.com/NikitaShulgan/Laba2#train-8) ) не показали свою эффективность. В итоге за основу был взят [Train 5](https://github.com/NikitaShulgan/Laba2#train-5) и уменьшин [Learning rate](https://en.wikipedia.org/wiki/Learning_rate) на основании статьи [A Comprehensive Hands-on Guide to Transfer Learning with Real-World Applications in Deep Learning](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a). Результаты показали около 87%. Проблема предыдущих попыток была в том, что нейросеть [не успевала обучаться](https://habrastorage.org/webt/dn/j1/nj/dnj1njm2womrahwlbv_dzs25xqs.jpeg).
 #### Links
 https://sci-hub.se/10.1007/s13748-019-00203-0
+https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a
+https://habr.com/ru/post/469931/
+
