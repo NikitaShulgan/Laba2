@@ -75,7 +75,7 @@ def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   model = EfficientNetB0(include_top=False, input_tensor=inputs, weights="imagenet", pooling='avg', classes=NUM_CLASSES)
   model.trainable = False
-  x = layers.BatchNormalization()(model)
+  x = layers.BatchNormalization()(inputs)
   #x = layers.GlobalAveragePooling2D(name="avg_pool")(model)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation="softmax")(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
