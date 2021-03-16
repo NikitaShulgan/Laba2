@@ -65,8 +65,6 @@ def create_dataset(filenames, batch_size):
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   x = EfficientNetB0(input_tensor=inputs, weights=None, classes=NUM_CLASSES)
-  x = layers.GlobalAveragePooling2D()(x.output)
-  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation="softmax")(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
