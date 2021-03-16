@@ -15,7 +15,6 @@ from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
 from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.layers.experimental import preprocessing
-from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
 import tensorflow.keras.applications
 
@@ -28,20 +27,12 @@ for gpu in gpus:
 
 
 LOG_DIR = 'logs'
-BATCH_SIZE = 8
+BATCH_SIZE = 32
 NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
 
-img_augmentation = Sequential(
-    [
-        preprocessing.RandomRotation(factor=0.15),
-        preprocessing.RandomTranslation(height_factor=0.1, width_factor=0.1),
-        preprocessing.RandomFlip(),
-        preprocessing.RandomContrast(factor=0.1),
-    ],
-    name="img_augmentation",
-)
+
  
 def parse_proto_example(proto):
   keys_to_features = {
@@ -72,35 +63,13 @@ def create_dataset(filenames, batch_size):
 
 
 def build_model():
-  
-  
-#   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-#   outputs = EfficientNetB0(weights=None, classes=NUM_CLASSES)(inputs)
-#   return tf.keras.Model(inputs=inputs, outputs=outputs)
-  
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = tf.keras.applications.efficientnet.preprocess_input(inputs)
-  #layer = preprocessing.Normalization()
-  #layer.adapt(inputs)
-  #normalized_data = layer(inputs)
-  x = EfficientNetB0(include_top=False, weights="imagenet")(x)
+  x = EfficientNetB0(include_top=False, input_tensor=inputs, weights="imagenet")
   x.trainable = False
-  #model.trainable = False
-  x = layers.GlobalMaxPooling2D()(x)
+  x = layers.GlobalAveragePooling2D()(x.output)
   outputs = tf.keras.layers.Dense(NUM_CLASSES, activation="softmax")(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
-#class MyModel(tf.keras.Model):
 
-#   def __init__(self):
-#     super(MyModel, self).__init__()
-#     self.sequ = tf.keras.Sequential()
-#     self.EN0 = EfficientNetB0(include_top=False, weights="imagenet", pooling='avg', classes=NUM_CLASSES)
-
-#   def call(self, inputs):
-#     x = self.sequ(inputs)
-#     return self.dense2(x)
-
-# model = MyModel()
 
 
 def main():
