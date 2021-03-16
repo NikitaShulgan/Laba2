@@ -81,7 +81,7 @@ def build_model():
   #layer = preprocessing.Normalization()
   #layer.adapt(inputs)
   #normalized_data = layer(inputs)
-  x = EfficientNetB0(include_top=False, weights="imagenet")(normalized_data)
+  x = EfficientNetB0(include_top=False, weights="imagenet")(inputs)
   x.trainable = False
   #model.trainable = False
   x = layers.GlobalMaxPooling2D()(x)
