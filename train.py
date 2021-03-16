@@ -78,7 +78,10 @@ def build_model():
 #   return tf.keras.Model(inputs=inputs, outputs=outputs)
   
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = EfficientNetB0(include_top=False, weights="imagenet")(inputs)
+  layer = preprocessing.Normalization()
+  layer.adapt(inputs)
+  normalized_data = layer(inputs)
+  x = EfficientNetB0(include_top=False, weights="imagenet")(normalized_data)
   x.trainable = False
   #model.trainable = False
   x = layers.GlobalMaxPooling2D()(x)
