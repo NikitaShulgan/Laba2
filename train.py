@@ -17,6 +17,7 @@ from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.layers.experimental import preprocessing
 from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
+import tf.keras.applications
 
 
 
@@ -78,10 +79,11 @@ def build_model():
 #   return tf.keras.Model(inputs=inputs, outputs=outputs)
   
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  x = tf.keras.applications.efficientnet.preprocess_input(inputs)
   #layer = preprocessing.Normalization()
   #layer.adapt(inputs)
   #normalized_data = layer(inputs)
-  x = EfficientNetB0(include_top=False, weights="imagenet")(inputs)
+  x = EfficientNetB0(include_top=False, weights="imagenet")(x)
   x.trainable = False
   #model.trainable = False
   x = layers.GlobalMaxPooling2D()(x)
