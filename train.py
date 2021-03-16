@@ -17,7 +17,7 @@ from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.keras.layers.experimental import preprocessing
 from tensorflow.keras.models import Sequential
 from tensorflow.keras import layers
-import tf.keras.applications
+import tensorflow.keras.applications
 
 
 
