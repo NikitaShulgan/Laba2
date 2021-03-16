@@ -64,7 +64,7 @@ def create_dataset(filenames, batch_size):
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  outputs = EfficientNetB0(include_top=True, input_tensor=inputs, weights=None, classes=NUM_CLASSES)
+  outputs = EfficientNetB0(include_top=True, weights=None, classes=NUM_CLASSES)(inputs)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
