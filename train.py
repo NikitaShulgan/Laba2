@@ -79,7 +79,7 @@ def build_model():
   
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   layer = preprocessing.Normalization()
-  layer.adapt(inputs)
+  #layer.adapt(inputs)
   normalized_data = layer(inputs)
   x = EfficientNetB0(include_top=False, weights="imagenet")(normalized_data)
   x.trainable = False
